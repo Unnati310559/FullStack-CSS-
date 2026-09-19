@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Moustache</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f3d2b3;
+        }
+
+        .moustache {
+            position: relative;
+            width: 360px;
+            height: 130px;
+        }
+
+        .moustache::before,
+        .moustache::after {
+            content: "";
+            position: absolute;
+            top: 30px;
+            width: 180px;
+            height: 70px;
+
+            background: linear-gradient(
+                145deg,
+                #4a2a1c,
+                #1b100b 45%,
+                #080504
+            );
+
+            box-shadow:
+                0 7px 6px rgba(0, 0, 0, 0.35),
+                inset 0 4px 5px rgba(255, 255, 255, 0.08);
+        }
+
+        .moustache::before {
+            left: 0;
+
+            border-radius: 15% 95% 10% 90%;
+
+            transform: rotate(10deg);
+
+            clip-path: polygon(
+                0 55%,
+                15% 35%,
+                35% 20%,
+                55% 15%,
+                75% 25%,
+                100% 50%,
+                82% 65%,
+                65% 75%,
+                45% 85%,
+                25% 90%,
+                8% 100%
+            );
+        }
+
+        .moustache::after {
+            right: 0;
+
+            border-radius: 95% 15% 90% 10%;
+
+            transform: rotate(-10deg);
+
+            clip-path: polygon(
+                0 50%,
+                25% 25%,
+                45% 15%,
+                65% 20%,
+                85% 35%,
+                100% 55%,
+                92% 100%,
+                75% 90%,
+                55% 85%,
+                35% 75%,
+                18% 65%
+            );
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="moustache"></div>
+
+</body>
+</html>
